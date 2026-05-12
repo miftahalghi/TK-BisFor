@@ -1,0 +1,234 @@
+/* ============================================================
+   LAPERIN — One Hub All Combat Sports
+   style.css — Shared stylesheet
+   ============================================================ */
+
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#0f0f0f; color:white; font-family:'Poppins', sans-serif; overflow-x:hidden; scroll-behavior:smooth; }
+
+/* ========================
+   NAVBAR
+======================== */
+nav { width:100%; position:fixed; top:0; left:0; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; z-index:1000; background:rgba(0,0,0,0.95); border-bottom:1px solid #e50914; }
+.nav-left { display:flex; align-items:center; gap:40px; }
+.logo { font-size:28px; font-family:'Oswald', sans-serif; font-weight:700; color:#e50914; text-decoration:none; letter-spacing:2px; cursor:pointer; }
+.nav-links a { text-decoration:none; color:white; font-size:13px; text-transform:uppercase; margin-right:20px; transition:0.3s; cursor:pointer; }
+.nav-links a:hover, .nav-links a.active { color:#e50914; }
+.nav-right { display:flex; align-items:center; gap:20px; }
+.social-icons { display:flex; gap:15px; border-right:1px solid #333; padding-right:20px; }
+.social-icons a { color:white; font-size:18px; transition:0.3s; }
+.social-icons a:hover { color:#e50914; }
+
+/* ========================
+   SHARED UTILITIES
+======================== */
+.section-title { font-family:'Oswald'; font-size:clamp(28px,4vw,42px); text-transform:uppercase; margin-bottom:10px; }
+.section-subtitle { color:#e50914; font-size:12px; text-transform:uppercase; letter-spacing:4px; margin-bottom:20px; }
+.title-line { width:60px; height:3px; background:#e50914; margin-top:15px; }
+
+.btn-dark { background:#222; color:#fff; padding:15px 30px; text-decoration:none; font-weight:600; text-transform:uppercase; font-size:14px; cursor:pointer; transition:0.3s; display:inline-block; }
+.btn-dark:hover { background:#e50914; }
+
+/* ========================
+   PAGE HERO (subpages)
+======================== */
+.page-hero { width:100%; height:45vh; background-size:cover; background-position:center; display:flex; flex-direction:column; align-items:center; justify-content:center; margin-top:60px; position:relative; text-align:center; padding:0 20px; }
+.page-hero::before { content:''; position:absolute; inset:0; background:rgba(0,0,0,0.65); }
+.page-hero * { position:relative; z-index:1; }
+.page-hero h1 { font-family:'Oswald'; font-size:clamp(36px,6vw,72px); text-transform:uppercase; letter-spacing:4px; }
+.page-hero p { color:#ffcc00; font-size:14px; text-transform:uppercase; letter-spacing:6px; margin-bottom:10px; }
+
+/* ========================
+   HOME PAGE
+======================== */
+.hero { width:100%; height:70vh; background:linear-gradient(to top, #0f0f0f, rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517438984742-1262db08379e?q=80&w=2070'); background-size:cover; background-position:center; display:flex; align-items:center; padding:0 50px; margin-top:60px; }
+.hero h1 { font-size:clamp(40px,8vw,80px); line-height:1; font-family:'Oswald', sans-serif; text-transform:uppercase; }
+
+.event-countdown { display:grid; grid-template-columns:1.2fr 0.8fr; min-height:400px; background:#ffcc00; color:#000; }
+.event-info { padding:60px 50px; display:flex; flex-direction:column; justify-content:center; }
+.event-date-loc { font-weight:600; font-size:18px; margin-bottom:10px; text-transform:uppercase; }
+.event-title { font-family:'Oswald'; font-size:clamp(30px,5vw,55px); line-height:1.1; margin-bottom:30px; }
+.event-btns { display:flex; gap:15px; }
+
+.countdown-timer { background:#fff; padding:60px 50px; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+.timer-label { font-family:'Oswald'; font-size:24px; margin-bottom:20px; text-transform:uppercase; color:#000; }
+.timer-grid { display:flex; gap:20px; font-family:'Oswald'; font-size:45px; text-align:center; color:#000; }
+.timer-unit { display:flex; flex-direction:column; }
+.timer-unit span { font-size:12px; font-family:'Poppins'; font-weight:600; color:#888; }
+
+.ufc-split { display:grid; grid-template-columns:1.8fr 1fr; background:#fff; color:#000; }
+.main-story { padding:50px; }
+.story-img { width:100%; height:400px; background:url('https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl/s3/2024-01/012024-ufc-297-strickland-vs-du-plessis-fights-everything-you-need-to-know-hero.jpg') center/cover; margin-bottom:20px; }
+.sidebar { background:#151515; color:#fff; padding:50px; }
+.rank-box { background:#e50914; min-width:35px; height:35px; display:flex; align-items:center; justify-content:center; font-family:'Oswald'; margin-right:15px; flex-shrink:0; }
+
+.video-section { background:linear-gradient(135deg, #0d253f 0%, #01050a 100%); padding:80px 50px; }
+.video-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:20px; }
+.v-thumb { position:relative; border-radius:12px; overflow:hidden; height:200px; }
+.v-thumb img { width:100%; height:100%; object-fit:cover; opacity:0.7; }
+.play-icon { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:50px; color:#fff; }
+
+.section { padding:80px 50px; }
+.fight-item { display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid #222; background:#151515; margin-bottom:5px; }
+.fight-date { font-family:'Oswald', sans-serif; color:#e50914; font-size:18px; width:100px; }
+
+.venue-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:20px; }
+.venue-card { background:#1a1a1a; border-radius:8px; overflow:hidden; }
+.venue-card img { width:100%; height:180px; object-fit:cover; }
+.venue-info { padding:20px; }
+
+.about-section { background:#111; padding:80px 50px; border-top:1px solid #222; }
+
+/* ========================
+   PROFIL PAGE
+======================== */
+.profil-intro { background:#0f0f0f; padding:80px 50px; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.profil-intro-text h2 { font-family:'Oswald'; font-size:40px; margin-bottom:20px; }
+.profil-intro-text h2 span { color:#e50914; }
+.profil-intro-text p { color:#aaa; line-height:1.8; font-size:15px; }
+.profil-stats { display:grid; grid-template-columns:1fr 1fr; gap:20px; }
+.stat-box { background:#151515; border-left:4px solid #e50914; padding:25px; }
+.stat-box h3 { font-family:'Oswald'; font-size:42px; color:#ffcc00; }
+.stat-box p { font-size:12px; text-transform:uppercase; color:#888; letter-spacing:2px; }
+
+.visi-misi { background:#111; padding:80px 50px; }
+.vm-grid { display:grid; grid-template-columns:1fr 1fr; gap:30px; margin-top:50px; }
+.vm-card { background:#0f0f0f; padding:40px; border-top:4px solid #e50914; position:relative; overflow:hidden; }
+.vm-card::before { content:attr(data-label); position:absolute; bottom:-20px; right:-10px; font-family:'Oswald'; font-size:100px; color:rgba(229,9,20,0.05); font-weight:700; }
+.vm-card h3 { font-family:'Oswald'; font-size:28px; margin-bottom:20px; color:#ffcc00; letter-spacing:2px; }
+.vm-card ul { list-style:none; }
+.vm-card ul li { color:#bbb; font-size:14px; line-height:1.8; padding:8px 0; border-bottom:1px solid #1a1a1a; display:flex; align-items:flex-start; gap:10px; }
+.vm-card ul li::before { content:'▸'; color:#e50914; flex-shrink:0; margin-top:2px; }
+.vm-card p { color:#bbb; font-size:14px; line-height:1.8; }
+
+.tujuan-section { background:#0f0f0f; padding:80px 50px; }
+.tujuan-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:25px; margin-top:50px; }
+.tujuan-card { background:#111; padding:40px; border-radius:2px; position:relative; overflow:hidden; transition:0.3s; }
+.tujuan-card:hover { transform:translateY(-5px); background:#151515; }
+.tujuan-icon { font-size:36px; color:#e50914; margin-bottom:20px; }
+.tujuan-card h4 { font-family:'Oswald'; font-size:20px; margin-bottom:12px; color:#fff; line-height:1.3; }
+.tujuan-card p { color:#888; font-size:13px; line-height:1.7; }
+.tujuan-num { position:absolute; top:20px; right:25px; font-family:'Oswald'; font-size:60px; color:rgba(229,9,20,0.08); font-weight:700; }
+
+/* ========================
+   LAYANAN PAGE
+======================== */
+.layanan-hero { background:linear-gradient(to top, #0f0f0f 20%, rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=2070'); background-size:cover; background-position:center; }
+
+.tiket-section { background:#111; padding:80px 50px; }
+.tiket-grid { display:grid; grid-template-columns:1fr 1fr; gap:0; margin-top:50px; }
+.tiket-visual { background:linear-gradient(135deg, #e50914, #8b0000); padding:60px; display:flex; flex-direction:column; justify-content:center; }
+.tiket-visual h2 { font-family:'Oswald'; font-size:50px; text-transform:uppercase; line-height:1; margin-bottom:20px; }
+.tiket-visual .price-tag { background:rgba(255,255,255,0.15); display:inline-block; padding:10px 25px; font-family:'Oswald'; font-size:28px; margin-bottom:30px; letter-spacing:2px; }
+.tiket-features { background:#0f0f0f; padding:60px; display:flex; flex-direction:column; justify-content:center; }
+.feat-item { display:flex; gap:20px; padding:20px 0; border-bottom:1px solid #1a1a1a; align-items:flex-start; }
+.feat-icon { width:48px; height:48px; background:#e50914; display:flex; align-items:center; justify-content:center; font-size:20px; flex-shrink:0; border-radius:2px; }
+.feat-text h4 { font-family:'Oswald'; font-size:18px; margin-bottom:5px; }
+.feat-text p { color:#888; font-size:13px; line-height:1.6; }
+
+.tiket-kategori { padding:80px 50px; background:#0f0f0f; }
+.kategori-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:40px; }
+.kat-card { background:#111; border:1px solid #1a1a1a; padding:35px; text-align:center; transition:0.3s; cursor:pointer; }
+.kat-card:hover { border-color:#e50914; transform:translateY(-4px); }
+.kat-card .kat-badge { background:#e50914; color:#fff; font-size:10px; font-weight:700; text-transform:uppercase; padding:4px 12px; letter-spacing:2px; display:inline-block; margin-bottom:15px; }
+.kat-card h3 { font-family:'Oswald'; font-size:28px; margin-bottom:8px; }
+.kat-card .price { font-family:'Oswald'; font-size:36px; color:#ffcc00; margin-bottom:15px; }
+.kat-card ul { list-style:none; color:#888; font-size:13px; line-height:2; }
+.kat-card .btn-buy { margin-top:20px; display:block; background:#e50914; color:#fff; padding:12px; font-family:'Oswald'; font-size:16px; text-transform:uppercase; letter-spacing:2px; text-decoration:none; transition:0.3s; }
+.kat-card .btn-buy:hover { background:#fff; color:#e50914; }
+
+.ads-section { background:linear-gradient(135deg, #0d0d0d, #1a0000); padding:80px 50px; border-top:1px solid #1a1a1a; }
+.ads-grid { display:grid; grid-template-columns:1fr 1fr; gap:50px; margin-top:50px; align-items:center; }
+.ads-text h2 { font-family:'Oswald'; font-size:42px; text-transform:uppercase; line-height:1.2; margin-bottom:20px; }
+.ads-text h2 em { color:#e50914; font-style:normal; }
+.ads-text p { color:#aaa; line-height:1.8; font-size:15px; margin-bottom:30px; }
+.ads-text .btn-contact { display:inline-block; background:#e50914; color:#fff; padding:15px 35px; font-family:'Oswald'; font-size:18px; text-transform:uppercase; letter-spacing:2px; text-decoration:none; cursor:pointer; transition:0.3s; }
+.ads-text .btn-contact:hover { background:#ffcc00; color:#000; }
+.ads-packages { display:flex; flex-direction:column; gap:15px; }
+.pkg-card { background:#111; padding:25px 30px; border-left:4px solid #e50914; display:flex; justify-content:space-between; align-items:center; transition:0.3s; }
+.pkg-card:hover { background:#1a1a1a; transform:translateX(5px); }
+.pkg-card h4 { font-family:'Oswald'; font-size:20px; }
+.pkg-card p { font-size:12px; color:#888; margin-top:4px; }
+.pkg-card .pkg-price { font-family:'Oswald'; font-size:24px; color:#ffcc00; text-align:right; }
+.pkg-card .pkg-price span { display:block; font-size:11px; color:#888; font-family:'Poppins'; }
+
+.ads-reach { padding:80px 50px; background:#0f0f0f; }
+.reach-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:40px; }
+.reach-card { text-align:center; padding:40px 20px; background:#111; border-bottom:3px solid #e50914; }
+.reach-card h3 { font-family:'Oswald'; font-size:46px; color:#ffcc00; margin-bottom:8px; }
+.reach-card p { color:#888; font-size:12px; text-transform:uppercase; letter-spacing:2px; }
+
+/* ========================
+   TIM PAGE
+======================== */
+.team-hero { background:linear-gradient(to top, #0f0f0f 20%, rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2070'); background-size:cover; background-position:center; }
+
+.org-chart { padding:80px 50px; background:#0f0f0f; }
+.org-title { text-align:center; margin-bottom:60px; }
+.org-tree { display:flex; flex-direction:column; align-items:center; gap:0; }
+.org-level { display:flex; justify-content:center; gap:30px; position:relative; width:100%; }
+
+.org-connector { width:2px; height:40px; background:#e50914; margin:0 auto; }
+.org-h-line { height:2px; background:#e50914; width:60%; margin:0 auto; position:relative; }
+.org-h-line::before, .org-h-line::after { content:''; position:absolute; width:2px; height:20px; background:#e50914; bottom:0; }
+.org-h-line::before { left:0; }
+.org-h-line::after { right:0; }
+
+.person-card { background:#111; padding:30px; text-align:center; width:200px; flex-shrink:0; border-top:3px solid #e50914; position:relative; transition:0.3s; }
+.person-card.komisaris { border-top-color:#ffcc00; width:260px; }
+.person-card.direktur { border-top-color:#e50914; width:240px; }
+.person-card:hover { transform:translateY(-5px); background:#1a1a1a; }
+.person-avatar { width:80px; height:80px; border-radius:50%; background:#222; margin:0 auto 15px; overflow:hidden; border:3px solid #e50914; display:flex; align-items:center; justify-content:center; font-size:30px; color:#e50914; }
+.komisaris .person-avatar { border-color:#ffcc00; }
+.person-card h4 { font-family:'Oswald'; font-size:16px; margin-bottom:5px; line-height:1.3; }
+.person-card .role { font-size:11px; text-transform:uppercase; letter-spacing:2px; color:#e50914; }
+.komisaris .role { color:#ffcc00; }
+.person-card .dept { font-size:11px; color:#555; margin-top:4px; }
+
+.team-detail { padding:80px 50px; background:#111; }
+.detail-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap:30px; margin-top:50px; }
+.detail-card { background:#0f0f0f; padding:40px; border-radius:2px; border-left:4px solid #e50914; }
+.detail-card .d-header { display:flex; align-items:center; gap:20px; margin-bottom:25px; }
+.detail-card .d-avatar { width:70px; height:70px; border-radius:50%; background:#1a1a1a; display:flex; align-items:center; justify-content:center; font-size:28px; color:#e50914; flex-shrink:0; }
+.detail-card h3 { font-family:'Oswald'; font-size:22px; line-height:1.3; }
+.detail-card .d-role { color:#e50914; font-size:12px; text-transform:uppercase; letter-spacing:2px; }
+.detail-card .d-desc { color:#888; font-size:13px; line-height:1.8; }
+.detail-card ul { list-style:none; margin-top:15px; }
+.detail-card ul li { color:#aaa; font-size:13px; padding:5px 0; display:flex; gap:8px; }
+.detail-card ul li::before { content:'→'; color:#e50914; flex-shrink:0; }
+
+/* ========================
+   FOOTER
+======================== */
+.site-footer { background:#0a0a0a; padding:60px 50px 0; border-top:1px solid #1a1a1a; }
+.footer-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1fr; gap:40px; margin-bottom:40px; }
+.footer-brand .logo { font-size:32px; display:block; margin-bottom:15px; }
+.footer-brand p { color:#555; font-size:13px; line-height:1.8; }
+.footer-col h4 { font-family:'Oswald'; color:#e50914; font-size:16px; text-transform:uppercase; letter-spacing:2px; margin-bottom:20px; }
+.footer-col a { display:block; color:#888; font-size:13px; margin-bottom:10px; text-decoration:none; transition:0.2s; cursor:pointer; }
+.footer-col a:hover { color:#fff; }
+.footer-socials { display:flex; gap:15px; }
+.footer-socials a { color:#444; font-size:18px; transition:0.2s; }
+.footer-socials a:hover { color:#e50914; }
+
+.footer-address { border-top:1px solid #1a1a1a; padding:30px 0; }
+.footer-address p { color:#555; font-size:12px; line-height:2; }
+.footer-address a { color:#888; text-decoration:none; transition:0.2s; }
+.footer-address a:hover { color:#e50914; }
+
+.footer-bottom { border-top:1px solid #1a1a1a; padding:20px 0; display:flex; justify-content:space-between; align-items:center; color:#444; font-size:12px; }
+
+/* ========================
+   RESPONSIVE
+======================== */
+@media (max-width: 900px) {
+  .event-countdown, .ufc-split, .tiket-grid, .ads-grid, .vm-grid, .tujuan-grid, .profil-intro, .footer-grid { grid-template-columns:1fr; }
+  .nav-links, .social-icons { display:none; }
+  nav { padding:15px 25px; }
+  .section, .tiket-section, .ads-section, .tiket-kategori, .profil-intro, .visi-misi, .tujuan-section, .org-chart, .team-detail, .ads-reach, .site-footer { padding:60px 25px; }
+  .hero, .page-hero { padding:0 25px; }
+  .kategori-grid, .reach-grid { grid-template-columns:1fr 1fr; }
+  .person-card { width:150px; }
+  .person-card.komisaris, .person-card.direktur { width:180px; }
+  .org-level { gap:10px; }
+}

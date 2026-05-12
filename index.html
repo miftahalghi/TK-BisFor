@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laperin — One Hub All Combat Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="nav-left">
+      <a class="logo" href="index.html">LAPERIN</a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Home</a>
+        <a href="profil.html">Profil</a>
+        <a href="layanan.html">Layanan</a>
+        <a href="tim.html">Tim</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <a href="layanan.html" style="background:#e50914; color:white; padding:8px 15px; text-decoration:none; font-weight:600; font-size:12px; border-radius:4px;">BELI TIKET</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div>
+      <p style="color:#ffcc00; font-size:13px; text-transform:uppercase; letter-spacing:4px; margin-bottom:15px;">PT Lantai Pertarungan Indonesia</p>
+      <h1>FIGHT FOR<br>THE THRONE.</h1>
+      <div style="display:flex; gap:15px; margin-top:30px;">
+        <a href="layanan.html" class="btn-dark">Beli Tiket</a>
+        <a href="profil.html" style="border:2px solid #fff; color:white; padding:15px 30px; text-decoration:none; font-weight:600; text-transform:uppercase; font-size:14px; transition:0.3s;"
+           onmouseover="this.style.borderColor='#e50914';this.style.color='#e50914'"
+           onmouseout="this.style.borderColor='#fff';this.style.color='#fff'">Tentang Kami</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- EVENT COUNTDOWN -->
+  <section class="event-countdown">
+    <div class="event-info">
+      <p class="event-date-loc">Mei 15 (Jum) 18:30 WIB | Istora Senayan, Jakarta</p>
+      <h2 class="event-title">LAPERIN NIGHT I — GRAND COMBAT CHAMPIONSHIP</h2>
+      <div class="event-btns">
+        <a href="layanan.html" class="btn-dark">Beli Tiket</a>
+        <a href="#" class="btn-dark">Tonton Live</a>
+      </div>
+    </div>
+    <div class="countdown-timer">
+      <p class="timer-label">HITUNG MUNDUR</p>
+      <div class="timer-grid">
+        <div class="timer-unit"><span id="days">03</span><span>HARI</span></div>
+        <div style="color:#ccc;">:</div>
+        <div class="timer-unit"><span id="hours">07</span><span>JAM</span></div>
+        <div style="color:#ccc;">:</div>
+        <div class="timer-unit"><span id="mins">15</span><span>MENIT</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS SPLIT -->
+  <section class="ufc-split" id="news">
+    <div class="main-story">
+      <div class="story-img"></div>
+      <h2 style="font-family:'Oswald'; text-transform:uppercase;">'Almighty' Power</h2>
+      <p>Saksikan kembalinya Arnold Allen hari Sabtu ini di Istora Senayan.</p>
+    </div>
+    <div class="sidebar">
+      <h3 style="font-family:'Oswald'; margin-bottom:25px; border-bottom:2px solid #e50914; padding-bottom:10px;">TOP STORIES</h3>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">1</div><p>Fight by Fight Preview | UFC Allen vs Costa</p></div>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">2</div><p>Main Event Preview | UFC Fight Night Jakarta</p></div>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">3</div><p>Fighters on the Rise | LAPERIN Grand Prix</p></div>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">4</div><p>Full Fight | Arnold Allen vs Dan Hooker</p></div>
+    </div>
+  </section>
+
+  <!-- VIDEO SECTION -->
+  <section class="video-section" id="videos">
+    <h2 style="font-family:'Oswald'; margin-bottom:30px;">VIDEO & TRAILERS</h2>
+    <div class="video-grid">
+      <div>
+        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1599058917233-3580e060004f?q=80&w=500" alt="video"><i class="far fa-play-circle play-icon"></i></div>
+        <p style="margin-top:10px;">LAPERIN Night I — Official Trailer</p>
+      </div>
+      <div>
+        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=500" alt="video"><i class="far fa-play-circle play-icon"></i></div>
+        <p style="margin-top:10px;">Highlight: Grand Combat Championship</p>
+      </div>
+      <div>
+        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1517438984742-1262db08379e?q=80&w=500" alt="video"><i class="far fa-play-circle play-icon"></i></div>
+        <p style="margin-top:10px;">Road to LAPERIN — Episode 1</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- UPCOMING FIGHTS -->
+  <section class="section" id="fights">
+    <h2 style="font-family:'Oswald'; margin-bottom:30px; border-left:5px solid #e50914; padding-left:20px;">UPCOMING FIGHTS</h2>
+    <div class="fight-item"><div class="fight-date">MEI 15</div><div>ALEX PEREIRA VS JIRI PROCHAZKA</div><p>LAPERIN NIGHT I</p></div>
+    <div class="fight-item"><div class="fight-date">MEI 22</div><div>MUHAMMAT RISKI VS KKHAJHE</div><p>BYON 9</p></div>
+    <div class="fight-item"><div class="fight-date">JUN 01</div><div>RODTANG VS TAKERU II</div><p>ONE SAMURAI</p></div>
+    <div class="fight-item"><div class="fight-date">JUN 10</div><div>ISLAM MAKHACHEV VS DUSTIN POIRIER</div><p>LAPERIN GRAND PRIX</p></div>
+  </section>
+
+  <!-- VENUES -->
+  <section class="section" style="background:#111;">
+    <h2 style="font-family:'Oswald'; margin-bottom:30px;">EVENT VENUES</h2>
+    <div class="venue-grid">
+      <div class="venue-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Istora_Senayan_Jakarta.jpg/1200px-Istora_Senayan_Jakarta.jpg" alt="Istora Senayan"><div class="venue-info"><h3>ISTORA SENAYAN</h3><p>JAKARTA, INDONESIA</p></div></div>
+      <div class="venue-card"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=500" alt="venue"><div class="venue-info"><h3>GELORA BUNG KARNO</h3><p>JAKARTA, INDONESIA</p></div></div>
+      <div class="venue-card"><img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=500" alt="venue"><div class="venue-info"><h3>BRITAMA ARENA</h3><p>KELAPA GADING, JAKARTA</p></div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT STRIP -->
+  <section class="about-section">
+    <h2 style="font-family:'Oswald'; color:#e50914; margin-bottom:15px;">TENTANG LAPERIN</h2>
+    <p style="color:#aaa; max-width:800px; line-height:1.8;">Laperin (PT Lantai Pertarungan Indonesia) adalah platform digital combat sports nomor satu di Indonesia yang menyatukan berita, hasil pertandingan, penjualan tiket, dan iklan event terbesar di tanah air.</p>
+    <div style="display:flex; gap:15px; margin-top:30px;">
+      <a href="profil.html" class="btn-dark">Profil Perusahaan</a>
+      <a href="layanan.html" class="btn-dark" style="background:transparent; border:2px solid #e50914; color:#e50914;">Layanan Kami</a>
+    </div>
+  </section>
+
+  <!-- APP DOWNLOAD -->
+  <section style="background:#fff; color:#000; padding:60px 20px; text-align:center; border-radius:30px 30px 0 0;">
+    <h3 style="font-family:'Oswald'; font-size:28px;">NIKMATI PENGALAMAN TERBAIK DI APLIKASI</h3>
+    <p style="color:#888; margin-top:10px; font-size:14px;">Tersedia di iOS dan Android</p>
+    <div style="margin-top:25px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg" height="45" style="margin:10px;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" height="45" style="margin:10px;">
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo">LAPERIN</span>
+        <p>PT Lantai Pertarungan Indonesia — Platform digital combat sports terdepan di Indonesia. Satu hub untuk semua kebutuhan combat sports Anda.</p>
+        <div class="footer-socials" style="margin-top:20px;">
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Perusahaan</h4>
+        <a href="profil.html">Profil Kami</a>
+        <a href="tim.html">Tim Pendiri</a>
+        <a href="#">Karir</a>
+        <a href="#">Press</a>
+      </div>
+      <div class="footer-col">
+        <h4>Layanan</h4>
+        <a href="layanan.html">Beli Tiket</a>
+        <a href="layanan.html">Pasang Iklan</a>
+        <a href="#">Daftar Event</a>
+        <a href="#">Partnership</a>
+      </div>
+      <div class="footer-col">
+        <h4>Kontak</h4>
+        <a href="mailto:info@laporincombat.com">info@laporincombat.com</a>
+        <a href="tel:+6287780621191">+62 877-8062-1191</a>
+        <a href="https://www.laporincombat.com" target="_blank">www.laporincombat.com</a>
+      </div>
+    </div>
+
+    <div class="footer-address">
+      <p>
+        <strong style="color:#888; font-size:13px;">PT. LANTAI PERTARUNGAN INDONESIA</strong><br>
+        Putri Indah Estate, Jl. Seruni Blok A No. 19, Gunung Putri, Bogor, 16962<br>
+        Telp: <a href="tel:+6287780621191">+62 877-8062-1191</a> &nbsp;|&nbsp;
+        Email: <a href="mailto:info@laporincombat.com">info@laporincombat.com</a> &nbsp;|&nbsp;
+        <a href="https://www.laporincombat.com" target="_blank">www.laporincombat.com</a>
+      </p>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 PT Lantai Pertarungan Indonesia. All Rights Reserved.</p>
+      <p>Privacy Policy · Terms of Service</p>
+    </div>
+  </footer>
+
+  <script>
+    function updateCountdown() {
+      const target = new Date('2026-05-15T18:30:00+07:00');
+      const now = new Date();
+      const diff = target - now;
+      if (diff <= 0) return;
+      const days = Math.floor(diff / 86400000);
+      const hours = Math.floor((diff % 86400000) / 3600000);
+      const mins = Math.floor((diff % 3600000) / 60000);
+      const d = document.getElementById('days');
+      const h = document.getElementById('hours');
+      const m = document.getElementById('mins');
+      if (d) d.textContent = String(days).padStart(2,'0');
+      if (h) h.textContent = String(hours).padStart(2,'0');
+      if (m) m.textContent = String(mins).padStart(2,'0');
+    }
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+  </script>
+
+</body>
+</html>
