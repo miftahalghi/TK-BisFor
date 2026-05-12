@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Laperin - One Hub All Combat Sports</title>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:#0f0f0f; color:white; font-family:'Poppins', sans-serif; overflow-x:hidden; scroll-behavior: smooth; }
+
+    /* 1. NAVBAR */
+    nav { width:100%; position:fixed; top:0; left:0; padding:15px 50px; display:flex; justify-content:space-between; align-items:center; z-index:1000; background:rgba(0,0,0,0.95); border-bottom:1px solid #e50914; }
+    .nav-left { display: flex; align-items: center; gap: 40px; }
+    .logo { font-size:28px; font-family:'Oswald', sans-serif; font-weight:700; color:#e50914; text-decoration:none; letter-spacing:2px; }
+    .nav-links a { text-decoration:none; color:white; font-size:13px; text-transform:uppercase; margin-right: 20px; transition: 0.3s; }
+    .nav-links a:hover { color:#e50914; }
+    .nav-right { display: flex; align-items: center; gap: 20px; }
+    .social-icons { display: flex; gap: 15px; border-right: 1px solid #333; padding-right: 20px; }
+    .social-icons a { color: white; font-size: 18px; transition: 0.3s; }
+    .social-icons a:hover { color: #e50914; }
+
+    /* 2. HERO */
+    .hero { width:100%; height:70vh; background: linear-gradient(to top, #0f0f0f, rgba(0,0,0,0.3)), url('https://images.unsplash.com/photo-1517438984742-1262db08379e?q=80&w=2070'); background-size:cover; background-position:center; display:flex; align-items:center; padding:0 50px; margin-top: 60px; }
+    .hero h1 { font-size:clamp(40px, 8vw, 80px); line-height:1; font-family:'Oswald', sans-serif; text-transform:uppercase; }
+
+    /* 3. COUNTDOWN EVENT (ELEMEN BARU - IMAGE 5) */
+    .event-countdown { display: grid; grid-template-columns: 1.2fr 0.8fr; min-height: 400px; background: #ffcc00; color: #000; }
+    .event-info { padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; }
+    .event-date-loc { font-weight: 600; font-size: 18px; margin-bottom: 10px; text-transform: uppercase; }
+    .event-title { font-family: 'Oswald'; font-size: clamp(30px, 5vw, 55px); line-height: 1.1; margin-bottom: 30px; }
+    .event-btns { display: flex; gap: 15px; }
+    .btn-dark { background: #222; color: #fff; padding: 15px 30px; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 14px; }
+    
+    .countdown-timer { background: #fff; padding: 60px 50px; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+    .timer-label { font-family: 'Oswald'; font-size: 24px; margin-bottom: 20px; text-transform: uppercase; }
+    .timer-grid { display: flex; gap: 20px; font-family: 'Oswald'; font-size: 45px; text-align: center; }
+    .timer-unit { display: flex; flex-direction: column; }
+    .timer-unit span { font-size: 12px; font-family: 'Poppins'; font-weight: 600; color: #888; }
+
+    /* 4. NEWS SPLIT */
+    .ufc-split { display: grid; grid-template-columns: 1.8fr 1fr; background: #fff; color: #000; }
+    .main-story { padding: 50px; }
+    .story-img { width: 100%; height: 400px; background: url('https://dmxg5wxfqgb4u.cloudfront.net/styles/background_image_xl/s3/2024-01/012024-ufc-297-strickland-vs-du-plessis-fights-everything-you-need-to-know-hero.jpg') center/cover; margin-bottom: 20px; }
+    .sidebar { background: #151515; color: #fff; padding: 50px; }
+    .rank-box { background: #e50914; min-width: 35px; height: 35px; display: flex; align-items: center; justify-content: center; font-family: 'Oswald'; margin-right: 15px; }
+
+    /* 5. VIDEO SLIDER */
+    .video-section { background: linear-gradient(135deg, #0d253f 0%, #01050a 100%); padding: 80px 50px; }
+    .video-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .v-thumb { position: relative; border-radius: 12px; overflow: hidden; height: 200px; }
+    .v-thumb img { width: 100%; height: 100%; object-fit: cover; opacity: 0.7; }
+    .play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 50px; color: #fff; }
+
+    /* 6. FIGHT LIST (4 ITEMS) */
+    .section { padding: 80px 50px; }
+    .fight-item { display:flex; align-items:center; justify-content:space-between; padding:20px; border-bottom:1px solid #222; background: #151515; margin-bottom: 5px; }
+    .fight-date { font-family:'Oswald', sans-serif; color:#e50914; font-size:18px; width: 100px; }
+
+    /* 7. VENUES */
+    .venue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    .venue-card { background: #1a1a1a; border-radius: 8px; overflow: hidden; }
+    .venue-card img { width: 100%; height: 180px; object-fit: cover; }
+    .venue-info { padding: 20px; }
+
+    /* 8. ABOUT US & FOOTER */
+    .about-section { background: #111; padding: 80px 50px; border-top: 1px solid #222; }
+    .download-footer { background: #fff; color: #000; padding: 60px 20px; text-align: center; border-radius: 30px 30px 0 0; }
+    .app-btns img { height: 45px; margin: 10px; }
+
+    @media (max-width: 900px) {
+      .event-countdown, .ufc-split { grid-template-columns: 1fr; }
+      .nav-links, .social-icons { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-left">
+      <a href="#" class="logo">LAPERIN</a>
+      <div class="nav-links">
+        <a href="#news">News</a>
+        <a href="#videos">Videos</a>
+        <a href="#fights">Fights</a>
+      </div>
+    </div>
+    <div class="nav-right">
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <a href="#" style="background:#e50914; color:white; padding:8px 15px; text-decoration:none; font-weight:600; font-size:12px; border-radius:4px;">GET APP</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <h1>FIGHT FOR<br>THE THRONE.</h1>
+  </header>
+
+  <section class="event-countdown">
+    <div class="event-info">
+      <p class="event-date-loc">Mei 15 (Jum) 18:30 WIB | Lumpinee Stadium, Bangkok</p>
+      <h2 class="event-title">ONE FRIDAY FIGHTS 154 & THE INNER CIRCLE</h2>
+      <div class="event-btns">
+        <a href="#" class="btn-dark">Beli Tiket</a>
+        <a href="#" class="btn-dark">Tonton Sekarang</a>
+      </div>
+    </div>
+    <div class="countdown-timer">
+      <p class="timer-label">BERIKUTNYA</p>
+      <div class="timer-grid">
+        <div class="timer-unit">03 <span>HARI</span></div>
+        <div style="color: #ccc;">:</div>
+        <div class="timer-unit">07 <span>JAM</span></div>
+        <div style="color: #ccc;">:</div>
+        <div class="timer-unit">15 <span>MENIT</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="ufc-split" id="news">
+    <div class="main-story">
+      <div class="story-img"></div>
+      <h2 style="font-family: 'Oswald'; text-transform: uppercase;">'Almighty' Power</h2>
+      <p>Saksikan kembalinya Arnold Allen hari Sabtu ini.</p>
+    </div>
+    <div class="sidebar">
+      <h3 style="font-family: 'Oswald'; margin-bottom: 25px; border-bottom: 2px solid #e50914;">TOP STORIES</h3>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">1</div><p>Fight by Fight Preview | UFC Allen vs Costa</p></div>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">2</div><p>Main Event Preview | UFC Fight Night</p></div>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">3</div><p>Fighters on the Rise | UFC Freedom 250</p></div>
+      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">4</div><p>Full Fight | Arnold Allen vs Dan Hooker</p></div>
+    </div>
+  </section>
+
+  <section class="video-section" id="videos">
+    <h2 style="font-family: 'Oswald'; margin-bottom: 30px;">VIDEO & TRAILERS</h2>
+    <div class="video-grid">
+      <div class="v-card">
+        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1599058917233-3580e060004f?q=80&w=500"><i class="far fa-play-circle play-icon"></i></div>
+        <p style="margin-top:10px;">Mortal Kombat II - Let's FN Go</p>
+      </div>
+      <div class="v-card">
+        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=500"><i class="far fa-play-circle play-icon"></i></div>
+        <p style="margin-top:10px;">The Bell - Exclusive Clip</p>
+      </div>
+      <div class="v-card">
+        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1517438984742-1262db08379e?q=80&w=500"><i class="far fa-play-circle play-icon"></i></div>
+        <p style="margin-top:10px;">Minions & Monsters - Final Trailer</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="fights">
+    <h2 style="font-family: 'Oswald'; margin-bottom: 30px; border-left: 5px solid #e50914; padding-left: 20px;">UPCOMING FIGHTS</h2>
+    <div class="fight-item"><div class="fight-date">MEI 15</div><div>ALEX PEREIRA VS JIRI PROCHAZKA</div><p>UFC 303</p></div>
+    <div class="fight-item"><div class="fight-date">MEI 22</div><div>MUHAMMAT RISKI VS KKHAJHE</div><p>BYON 9</p></div>
+    <div class="fight-item"><div class="fight-date">JUN 01</div><div>RODTANG VS TAKERU II</div><p>ONE SAMURAI</p></div>
+    <div class="fight-item"><div class="fight-date">JUN 10</div><div>ISLAM MAKHACHEV VS DUSTIN POIRIER</div><p>UFC 302</p></div>
+  </section>
+
+  <section class="section" id="venues" style="background: #111;">
+    <h2 style="font-family: 'Oswald'; margin-bottom: 30px;">EVENT VENUES</h2>
+    <div class="venue-grid">
+      <div class="venue-card"><img src="https://images.unsplash.com/photo-1599058917233-3580e060004f?q=80&w=500"><div class="venue-info"><h3>ISTORA SENAYAN</h3><p>JAKARTA, INDONESIA</p></div></div>
+      <div class="venue-card"><img src="https://sportshub.com.sg/sites/default/files/2023-01/Singapore%20Indoor%20Stadium.jpg"><div class="venue-info"><h3>INDOOR STADIUM</h3><p>SINGAPORE</p></div></div>
+      <div class="venue-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/T-Mobile_Arena_Exterior.jpg/1200px-T-Mobile_Arena_Exterior.jpg"><div class="venue-info"><h3>T-MOBILE ARENA</h3><p>LAS VEGAS, USA</p></div></div>
+    </div>
+  </section>
+
+  <section class="about-section">
+    <h2 style="font-family: 'Oswald'; color: #e50914; margin-bottom: 15px;">ABOUT LAPERIN</h2>
+    <p style="color: #aaa; max-width: 800px;">Laperin adalah platform combat sports nomor satu di Indonesia yang menyatukan berita, hasil pertandingan, dan akses tiket event terbesar di dunia.</p>
+  </section>
+
+  <section class="download-footer">
+    <h3>ENJOY THE BEST EXPERIENCE ON APP</h3>
+    <div class="app-btns">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Download_on_the_App_Store_Badge.svg">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg">
+    </div>
+    <div style="margin-top: 30px; opacity: 0.6; display: flex; justify-content: center; gap: 40px;">
+        <p>UFC</p><p>ONE</p><p>DANA</p>
+    </div>
+  </section>
+
+  <footer style="padding: 20px; text-align: center; font-size: 12px; color: #444;">
+    © 2026 Laperin Combat Hub. All Rights Reserved.
+  </footer>
+
+</body>
+</html>

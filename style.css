@@ -1,0 +1,345 @@
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;600;700&display=swap');
+
+/* RESET */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#050505;
+  color:white;
+  font-family:'Poppins', sans-serif;
+  overflow-x:hidden;
+}
+
+/* NAVBAR */
+nav{
+  width:100%;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+
+  padding:18px 60px;
+
+  background:rgba(0,0,0,0.92);
+  backdrop-filter: blur(10px);
+
+  border-bottom:1px solid rgba(255,0,0,0.4);
+}
+
+.logo{
+  color:#ff1e1e;
+  text-decoration:none;
+  font-size:30px;
+  font-family:'Anton', sans-serif;
+  letter-spacing:2px;
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:25px;
+}
+
+.nav-links a{
+  color:white;
+  text-decoration:none;
+  font-size:13px;
+  font-weight:600;
+  text-transform:uppercase;
+  transition:0.3s;
+  letter-spacing:1px;
+}
+
+.nav-links a:hover{
+  color:#ff1e1e;
+}
+
+/* DROPDOWN */
+.dropdown{
+  position:relative;
+}
+
+.dropdown-content{
+  position:absolute;
+  top:120%;
+  left:0;
+
+  display:none;
+
+  min-width:220px;
+
+  background:#111;
+  border:1px solid #222;
+
+  box-shadow:0 0 20px rgba(255,0,0,0.2);
+}
+
+.dropdown-content a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid #1f1f1f;
+}
+
+.dropdown:hover .dropdown-content{
+  display:block;
+}
+
+/* FLASH SALE */
+.flash-sale{
+  margin-top:78px;
+  background:linear-gradient(90deg,#8b0000,#ff0000,#8b0000);
+  padding:12px 0;
+
+  font-weight:700;
+  font-size:14px;
+
+  border-bottom:2px solid #ffcc00;
+
+  box-shadow:0 0 20px rgba(255,0,0,0.5);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+
+  background:
+  linear-gradient(to top, rgba(0,0,0,0.95), rgba(0,0,0,0.4)),
+  url('https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=1974&auto=format&fit=crop');
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  justify-content:center;
+  align-items:center;
+
+  text-align:center;
+  position:relative;
+}
+
+/* GRID EFFECT */
+.hero::before{
+  content:'';
+  position:absolute;
+  inset:0;
+
+  background:
+  linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+  linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+  background-size:50px 50px;
+}
+
+.overlay{
+  position:relative;
+  z-index:2;
+}
+
+.hero h1{
+  font-size:120px;
+  font-family:'Anton', sans-serif;
+  letter-spacing:5px;
+
+  color:white;
+
+  text-shadow:
+  0 0 20px rgba(255,0,0,0.8),
+  0 0 50px rgba(255,0,0,0.5);
+
+  margin-bottom:20px;
+}
+
+.hero p{
+  max-width:750px;
+  margin:auto;
+
+  font-size:18px;
+  line-height:1.8;
+
+  color:#ddd;
+}
+
+/* RANKING SECTION */
+.ranking-section{
+  padding:120px 60px;
+  background:
+  radial-gradient(circle at top, rgba(255,0,0,0.15), transparent 50%),
+  #050505;
+}
+
+.ranking-section h2{
+  text-align:center;
+  font-size:40px;
+  margin-bottom:60px;
+  font-family:'Anton', sans-serif;
+  letter-spacing:2px;
+}
+
+/* PODIUM */
+.podium{
+  display:flex;
+  justify-content:center;
+  align-items:flex-end;
+  gap:30px;
+  flex-wrap:wrap;
+}
+
+.rank-card{
+  width:240px;
+
+  background:linear-gradient(180deg,#161616,#090909);
+
+  border:1px solid #222;
+  border-radius:16px;
+
+  overflow:hidden;
+
+  transition:0.4s;
+
+  position:relative;
+}
+
+.rank-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 30px rgba(255,0,0,0.3);
+}
+
+.rank-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.rank-info{
+  padding:20px;
+  text-align:center;
+
+  font-weight:700;
+  font-size:18px;
+}
+
+/* CHAMPION CARD */
+.rank-1{
+  transform:scale(1.08);
+  border:2px solid #ffcc00;
+
+  box-shadow:
+  0 0 25px rgba(255,204,0,0.5),
+  0 0 60px rgba(255,0,0,0.3);
+}
+
+.crown{
+  position:absolute;
+  top:-22px;
+  left:50%;
+  transform:translateX(-50%);
+
+  font-size:42px;
+}
+
+/* BUTTON */
+.btn-buy{
+  display:block;
+
+  margin:0 20px 20px;
+
+  padding:12px;
+
+  background:linear-gradient(90deg,#ffcc00,#ffea00);
+
+  color:black;
+  text-decoration:none;
+
+  font-weight:700;
+  border-radius:8px;
+
+  transition:0.3s;
+}
+
+.btn-buy:hover{
+  transform:scale(1.05);
+}
+
+/* TICKET */
+.ticket-list{
+  padding:100px 60px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.ticket-list h2{
+  margin-bottom:35px;
+  font-size:40px;
+  font-family:'Anton', sans-serif;
+}
+
+.ticket-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+
+  background:#111;
+
+  border-left:5px solid red;
+
+  margin-bottom:15px;
+  padding:25px;
+
+  transition:0.3s;
+}
+
+.ticket-item:hover{
+  background:#181818;
+  transform:translateX(8px);
+}
+
+.date{
+  color:#ff2a2a;
+  font-weight:700;
+  width:90px;
+}
+
+.matchup{
+  flex:1;
+  font-weight:600;
+}
+
+.price{
+  color:#ffcc00;
+  font-weight:700;
+  margin-right:20px;
+}
+
+.btn-small{
+  background:white;
+  color:black;
+
+  text-decoration:none;
+
+  padding:10px 18px;
+
+  font-size:12px;
+  font-weight:700;
+
+  border-radius:5px;
+}
+
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+
+  background:black;
+
+  color:#666;
+  border-top:1px solid #111;
+}
