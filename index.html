@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -34,6 +34,9 @@
   <!-- HERO -->
   <header class="hero">
     <div>
+      <video autoplay muted loop playsinline style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+      <source src="/Users/imamfahrudin/Downloads/v14044g50000d4chguvog65genqh023g.MP4" type="video/mp4">
+    </video>
       <p style="color:#ffcc00; font-size:13px; text-transform:uppercase; letter-spacing:4px; margin-bottom:15px;">PT Lantai Pertarungan Indonesia</p>
       <h1>FIGHT FOR<br>THE THRONE.</h1>
       <div style="display:flex; gap:15px; margin-top:30px;">
@@ -45,61 +48,163 @@
     </div>
   </header>
 
+
   <!-- EVENT COUNTDOWN -->
-  <section class="event-countdown">
-    <div class="event-info">
-      <p class="event-date-loc">Mei 15 (Jum) 18:30 WIB | Istora Senayan, Jakarta</p>
-      <h2 class="event-title">LAPERIN NIGHT I — GRAND COMBAT CHAMPIONSHIP</h2>
-      <div class="event-btns">
-        <a href="layanan.html" class="btn-dark">Beli Tiket</a>
-        <a href="#" class="btn-dark">Tonton Live</a>
-      </div>
+  
+   <section class="one-style-banner" style="display: flex; background: #000; min-height: 500px; font-family: 'Arial', sans-serif;">
+    
+    <div style="flex: 1.2; position: relative; overflow: hidden;">
+        <img src="https://cdn.onefc.com/wp-content/uploads/sites/4/2025/11/260429-ONESamurai1-1800x1200px-1.jpg" alt="Fighters" style="width: 100%; height: 100%; object-fit: cover;">
+        <div style="position: absolute; top: 0; right: 0; width: 20%; height: 100%; background: linear-gradient(to right, transparent, #000);"></div>
     </div>
-    <div class="countdown-timer">
-      <p class="timer-label">HITUNG MUNDUR</p>
-      <div class="timer-grid">
-        <div class="timer-unit"><span id="days">03</span><span>HARI</span></div>
-        <div style="color:#ccc;">:</div>
-        <div class="timer-unit"><span id="hours">07</span><span>JAM</span></div>
-        <div style="color:#ccc;">:</div>
-        <div class="timer-unit"><span id="mins">15</span><span>MENIT</span></div>
-      </div>
+
+    <div style="flex: 1; background: #000; padding: 40px; display: flex; flex-direction: column; justify-content: flex-start; color: white;">
+        
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 15px; margin-bottom: 20px;">
+            <span style="text-transform: uppercase; font-weight: bold; font-size: 14px; letter-spacing: 1px;">Berikutnya</span>
+            <span style="color: #888; font-size: 12px; text-transform: uppercase; cursor: pointer;">> Gelaran Sebelumnya</span>
+        </div>
+
+        <div style="display: flex; gap: 20px; margin-bottom: 30px;">
+            <div style="text-align: center;">
+                <span id="jam" style="font-size: 40px; font-weight: bold; display: block;">60</span>
+                <span style="font-size: 10px; color: #888; text-transform: uppercase;">Jam</span>
+            </div>
+            <span style="font-size: 30px; font-weight: bold; padding-top: 5px;">:</span>
+            <div style="text-align: center;">
+                <span id="menit" style="font-size: 40px; font-weight: bold; display: block;">02</span>
+                <span style="font-size: 10px; color: #888; text-transform: uppercase;">Menit</span>
+            </div>
+            <span style="font-size: 30px; font-weight: bold; padding-top: 5px;">:</span>
+            <div style="text-align: center;">
+                <span id="detik" style="font-size: 40px; font-weight: bold; display: block;">44</span>
+                <span style="font-size: 10px; color: #888; text-transform: uppercase;">Detik</span>
+            </div>
+        </div>
+
+        <div style="background: #111; padding: 30px; border-radius: 4px; border-left: 5px solid #e50914;">
+            <p style="color: #ffcc00; font-weight: bold; font-size: 14px; margin-bottom: 5px; text-transform: uppercase;">
+                Mei 28 (Jum) 18:30 WIB
+            </p>
+            <p style="font-size: 14px; color: #ccc; margin-bottom: 15px;">Ariake Arena, Tokyo</p>
+            
+            <h2 style="font-family: 'Oswald', sans-serif; font-size: 32px; text-transform: uppercase; line-height: 1.1; margin-bottom: 30px;">
+                ONE SAMURAI 1 — <br>GRAND COMBAT CHAMPIONSHIP
+            </h2>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+                <div style="display: flex; gap: 10px;">
+                    <a href="#" style="flex: 1; background: #222; color: white; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; font-size: 12px; text-transform: uppercase; border: 1px solid #444;">Beli Tiket</a>
+                    <a href="#" style="flex: 1; background: #222; color: white; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; font-size: 12px; text-transform: uppercase; border: 1px solid #444;">Tonton Live</a>
+                </div>
+                <a href="#" style="background: #333; color: white; padding: 12px; text-align: center; text-decoration: none; font-weight: bold; font-size: 12px; text-transform: uppercase; border: 1px solid #444;">Cara Menonton</a>
+            </div>
+        </div>
     </div>
-  </section>
+</section>
+
+<script>
+  const targetDate = new Date("May 28, 2026 18:30:00").getTime();
+  setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+    document.getElementById("jam").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    document.getElementById("menit").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    document.getElementById("detik").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+  }, 1000);
+</script>
 
   <!-- NEWS SPLIT -->
-  <section class="ufc-split" id="news">
-    <div class="main-story">
-      <div class="story-img"></div>
-      <h2 style="font-family:'Oswald'; text-transform:uppercase;">'Almighty' Power</h2>
-      <p>Saksikan kembalinya Arnold Allen hari Sabtu ini di Istora Senayan.</p>
+ <section class="ufc-split" id="news" style="display: flex; gap: 30px; padding: 50px 10%; background: #000; color: white;">
+    
+    <div class="main-story" style="
+        flex: 2; 
+        position: relative; 
+        height: 500px; 
+        background-image: linear-gradient(to top, rgba(0,0,0,0.9), transparent), url('https://scontent.fcgk3-4.fna.fbcdn.net/v/t39.30808-6/625326421_1512334700893783_3635356551647559461_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_ohc=q1kQFJzcyU8Q7kNvwFEuyv0&_nc_oc=AdoynehJVIW57n7gdMtwwPS5JDZ91Tqbi1s__u2pX0CGuwFyr3HQpAwaxiv79tGw0rc&_nc_zt=23&_nc_ht=scontent.fcgk3-4.fna&_nc_gid=a4YsMXOuWkDVgmAzUItgpA&_nc_ss=7b289&oh=00_Af7C7RbuN8kND4KBgmXNj3BIWReWvU7yIdTcqhOCwJi91A&oe=6A0BF831'); 
+        background-size: cover; 
+        background-position: center; 
+        border-radius: 8px; 
+        display: flex; 
+        flex-direction: column; 
+        justify-content: flex-end; 
+        padding: 40px;
+        box-shadow: inset 0 0 100px rgba(0,0,0,0.5);">
+        
+        <span style="background: #e50914; color: white; padding: 5px 15px; font-weight: bold; width: fit-content; text-transform: uppercase; font-size: 12px; margin-bottom: 15px;">Main Event</span>
+        <h2 style="font-family:'Oswald', sans-serif; text-transform:uppercase; font-size: 42px; margin: 0; line-height: 1.1;">'Almighty' Power</h2>
+        <p style="font-size: 18px; color: #ccc; margin-top: 10px; max-width: 80%;">Ilia Topuria vs. Justin Gaethje at the White House is now a legit possibility.</p>
     </div>
-    <div class="sidebar">
-      <h3 style="font-family:'Oswald'; margin-bottom:25px; border-bottom:2px solid #e50914; padding-bottom:10px;">TOP STORIES</h3>
-      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">1</div><p>Fight by Fight Preview | UFC Allen vs Costa</p></div>
-      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">2</div><p>Main Event Preview | UFC Fight Night Jakarta</p></div>
-      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">3</div><p>Fighters on the Rise | LAPERIN Grand Prix</p></div>
-      <div style="display:flex; margin-bottom:20px;"><div class="rank-box">4</div><p>Full Fight | Arnold Allen vs Dan Hooker</p></div>
+
+    <div class="sidebar" style="flex: 1; background: #111; padding: 30px; border-radius: 8px; border-top: 4px solid #e50914;">
+        <h3 style="font-family:'Oswald', sans-serif; margin-bottom:25px; border-bottom:1px solid #333; padding-bottom:10px; text-transform: uppercase; letter-spacing: 1px;">TOP STORIES</h3>
+        
+        <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; margin-bottom: 25px; transition: 0.3s;" onmouseover="this.style.color='#e50914'" onmouseout="this.style.color='white'">
+            <div style="min-width: 40px; height: 40px; background: #222; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Oswald'; margin-right: 15px; border: 1px solid #333;">1</div>
+            <p style="margin: 0; font-size: 15px; font-weight: 500;">Fight by Fight Preview | UFC Allen vs Costa</p>
+        </a>
+
+        <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; margin-bottom: 25px; transition: 0.3s;" onmouseover="this.style.color='#e50914'" onmouseout="this.style.color='white'">
+            <div style="min-width: 40px; height: 40px; background: #222; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Oswald'; margin-right: 15px; border: 1px solid #333;">2</div>
+            <p style="margin: 0; font-size: 15px; font-weight: 500;">Main Event Preview | UFC Fight Night Jakarta</p>
+        </a>
+
+        <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; margin-bottom: 25px; transition: 0.3s;" onmouseover="this.style.color='#e50914'" onmouseout="this.style.color='white'">
+            <div style="min-width: 40px; height: 40px; background: #222; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Oswald'; margin-right: 15px; border: 1px solid #333;">3</div>
+            <p style="margin: 0; font-size: 15px; font-weight: 500;">Fighters on the Rise | LAPERIN Grand Prix</p>
+        </a>
+
+         <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; margin-bottom: 25px; transition: 0.3s;" onmouseover="this.style.color='#e50914'" onmouseout="this.style.color='white'">
+            <div style="min-width: 40px; height: 40px; background: #222; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Oswald'; margin-right: 15px; border: 1px solid #333;">4</div>
+            <p style="margin: 0; font-size: 15px; font-weight: 500;">Fighters on the Rise | LAPERIN Grand Prix</p>
+        </a>
+
+         <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; margin-bottom: 25px; transition: 0.3s;" onmouseover="this.style.color='#e50914'" onmouseout="this.style.color='white'">
+            <div style="min-width: 40px; height: 40px; background: #222; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Oswald'; margin-right: 15px; border: 1px solid #333;">5</div>
+            <p style="margin: 0; font-size: 15px; font-weight: 500;">Fighters on the Rise | LAPERIN Grand Prix</p>
+        </a>
+
+        <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; transition: 0.3s;" onmouseover="this.style.color='#e50914'" onmouseout="this.style.color='white'">
+            <div style="min-width: 40px; height: 40px; background: #222; display: flex; align-items: center; justify-content: center; font-weight: bold; font-family: 'Oswald'; margin-right: 15px; border: 1px solid #333;">6</div>
+            <p style="margin: 0; font-size: 15px; font-weight: 500;">Full Fight | Arnold Allen vs Dan Hooker</p>
+        </a>
+        
     </div>
-  </section>
+</section>
 
   <!-- VIDEO SECTION -->
-  <section class="video-section" id="videos">
-    <h2 style="font-family:'Oswald'; margin-bottom:30px;">VIDEO & TRAILERS</h2>
-    <div class="video-grid">
-      <div>
-        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1599058917233-3580e060004f?q=80&w=500" alt="video"><i class="far fa-play-circle play-icon"></i></div>
-        <p style="margin-top:10px;">LAPERIN Night I — Official Trailer</p>
-      </div>
-      <div>
-        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?q=80&w=500" alt="video"><i class="far fa-play-circle play-icon"></i></div>
-        <p style="margin-top:10px;">Highlight: Grand Combat Championship</p>
-      </div>
-      <div>
-        <div class="v-thumb"><img src="https://images.unsplash.com/photo-1517438984742-1262db08379e?q=80&w=500" alt="video"><i class="far fa-play-circle play-icon"></i></div>
-        <p style="margin-top:10px;">Road to LAPERIN — Episode 1</p>
-      </div>
-    </div>
+  <section class="video-trailers-section" style="padding: 80px 50px; background: #080808; text-align: center; border-top: 2px solid #1a1a1a;">
+    <p class="section-subtitle" style="color: #e50914; text-transform: uppercase; letter-spacing: 3px; font-size: 14px; font-weight: 700; margin-bottom: 10px;">Aksi Terbaru di Ring</p>
+    <h2 class="section-title" style="font-family: 'Oswald'; font-size: 42px; color: #fff; margin: 0;">VIDEO & TRAILERS</h2>
+    <div class="title-line" style="width: 60px; height: 4px; background: #e50914; margin: 20px auto 45px;"></div>
+
+    <div class="video-container-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto;">
+      
+   <div class="video-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; padding: 20px;">
+  
+  <div style="text-align: center; background: #111; padding: 10px; border-radius: 8px;">
+    <a href="https://www.youtube.com/watch?v=pgimOpA28H0" target="_blank">
+      <img src="https://img.youtube.com/vi/pgimOpA28H0/maxresdefault.jpg" style="width: 100%; border-radius: 5px; border: 2px solid #e50914;">
+    </a>
+    <h4 style="color: #fff; font-family: 'Oswald'; margin-top: 10px;">BYON COMBAT: TENKAI VS FELMY</h4>
+  </div>
+
+  <div style="text-align: center; background: #111; padding: 10px; border-radius: 8px;">
+    <a href="https://www.youtube.com/watch?v=35ZPjXAc5oU" target="_blank">
+      <img src="https://img.youtube.com/vi/35ZPjXAc5oU/maxresdefault.jpg" style="width: 100%; border-radius: 5px; border: 2px solid #e50914;">
+    </a>
+    <h4 style="color: #fff; font-family: 'Oswald'; margin-top: 10px;">UFC 328 EMBEDDED EP. 5</h4>
+  </div>
+
+  <div style="text-align: center; background: #111; padding: 10px; border-radius: 8px;">
+    <a href="https://www.youtube.com/watch?v=Mfszep-VYps" target="_blank">
+      <img src="https://img.youtube.com/vi/Mfszep-VYps/maxresdefault.jpg" style="width: 100%; border-radius: 5px; border: 2px solid #e50914;">
+    </a>
+    <h4 style="color: #fff; font-family: 'Oswald'; margin-top: 10px;">HAGGERTY VS YOZA PREVIEW</h4>
+  </div>
+
+</div>
+  
   </section>
 
   <!-- UPCOMING FIGHTS -->
@@ -112,14 +217,43 @@
   </section>
 
   <!-- VENUES -->
-  <section class="section" style="background:#111;">
-    <h2 style="font-family:'Oswald'; margin-bottom:30px;">EVENT VENUES</h2>
-    <div class="venue-grid">
-      <div class="venue-card"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/Istora_Senayan_Jakarta.jpg/1200px-Istora_Senayan_Jakarta.jpg" alt="Istora Senayan"><div class="venue-info"><h3>ISTORA SENAYAN</h3><p>JAKARTA, INDONESIA</p></div></div>
-      <div class="venue-card"><img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=500" alt="venue"><div class="venue-info"><h3>GELORA BUNG KARNO</h3><p>JAKARTA, INDONESIA</p></div></div>
-      <div class="venue-card"><img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?q=80&w=500" alt="venue"><div class="venue-info"><h3>BRITAMA ARENA</h3><p>KELAPA GADING, JAKARTA</p></div></div>
-    </div>
-  </section>
+ <section style="padding: 50px; background: #111; color: white;">
+  <h2 style="font-family: 'Oswald', sans-serif; text-transform: uppercase; margin-bottom: 30px;">Event Venues</h2>
+  
+  <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+    
+    <a href="https://www.google.com/maps/search/?api=1&query=Ariake+Arena+Tokyo" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background: #1a1a1a; border-radius: 8px; overflow: hidden; transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://cdn.onefc.com/wp-content/uploads/sites/4/2025/11/260429-ONESamurai1-1800x1200px-1.jpg" alt="Ariake Arena" style="width: 100%; height: 200px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="margin: 0; font-family: 'Oswald'; text-transform: uppercase;">Ariake Arena</h3>
+          <p style="color: #888; font-size: 14px; margin-top: 5px;">Tokyo, Japan</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=The+South+Lawn+of+the+White+House" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background: #1a1a1a; border-radius: 8px; overflow: hidden; transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://ufc.com/images/styles/767x432_2/s3/image/2026-04/Freedom250_Microsite_FeatEvent_03.png?h=d1cb525d&itok=0Q7JJYPG" alt="South Lawn" style="width: 100%; height: 200px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="margin: 0; font-family: 'Oswald'; text-transform: uppercase;">South Lawn White House</h3>
+          <p style="color: #888; font-size: 14px; margin-top: 5px;">Washington, D.C., USA</p>
+        </div>
+      </div>
+    </a>
+
+    <a href="https://www.google.com/maps/search/?api=1&query=Istora+Senayan+Jakarta" target="_blank" style="text-decoration: none; color: inherit;">
+      <div style="background: #1a1a1a; border-radius: 8px; overflow: hidden; transition: 0.3s;" onmouseover="this.style.transform='scale(1.02)'" onmouseout="this.style.transform='scale(1)'">
+        <img src="https://byoncombat.com/wp-content/uploads/2026/04/Desktop-BYON7.jpeg" alt="Istora Senayan" style="width: 100%; height: 200px; object-fit: cover;">
+        <div style="padding: 20px;">
+          <h3 style="margin: 0; font-family: 'Oswald'; text-transform: uppercase;">Istora Senayan</h3>
+          <p style="color: #888; font-size: 14px; margin-top: 5px;">Jakarta, Indonesia</p>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
 
   <!-- ABOUT STRIP -->
   <section class="about-section">
